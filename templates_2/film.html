@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Result</title>
+    <style>
+        .container {
+            margin-top: 30px;
+        }
+
+        .row {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>{{ title }}</h1>
+            <p>评分: {{ rating }}</p>
+            <p>演员: {{ actor }}</p>
+            <p>类别: {{ category }}</p>
+            <p>电影简介：</p>
+            <p>{{ describe }}</p>
+        </div>
+        <div class="row">
+            <p>用户短评：</p>
+            <ol>
+                {% for comment in short_comment %}
+                    <li>{{ comment }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        {% load staticfiles %}
+        <img src= "{% static image_url %}" />
+
+
+    </div>
+</body>
+</html>

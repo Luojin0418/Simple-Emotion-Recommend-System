@@ -1,0 +1,161 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Recommendation System</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand">Recommendation System</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'home' %}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'questionnaire' %}>Questionnaire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'recommend' %}>Recommendation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'search' %}>Search</a>
+          </li>
+          </li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Emotion-aware Movie Recommendation System 
+
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active">Home: Brief introduction to our system</li>
+    </ol>
+
+    <!-- Intro Content -->
+    <div class="row">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-4" src="{% static 'guanying.jpg' %}" alt="">
+      </div>
+      <div class="col-lg-6">
+        <h2>About Our Recommend System</h2>
+        <p>Welcome to our Emotion-aware Movie Recommendation System.</p>
+        <p>If you are using our system for the first time, there are some rules you need to understand. Our system is based on the user's current facial emotion to recommend movies for users, so please make sure that the camera is turned on and can get all your facial information.</p>
+        <p>In our system, you must complete a questionnaire before recommending movies to users. This questionnaire determines the emotional orientation of recommending movies for you. When you complete this questionnaire, you will automatically jump to the recommendation page. There will be four movies recommended based on your current emotions. You can use the button to go to the details page for more information. You can also search for specific movies through search page.</p>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Team Members -->
+    <h2>Our Page</h2>
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Questionnaire</h4>
+            <p class="card-text">You must fill in our questionnaire here so that we can better recommend movies for you.</p>
+          </div>
+          <div class="card-footer">
+            <a href={% url 'questionnaire' %}>click here</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Recommendation</h4>
+            <p class="card-text">We are here to recommend four movies that are most suitable for you based on your feelings.</p>
+          </div>
+          <div class="card-footer">
+            <a href={% url 'recommend' %}>click here</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Search</h4>
+            <p class="card-text">Here you can search for more specific movie details.</p>
+          </div>
+          <div class="card-footer">
+            <a href={% url 'search' %}>click here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Our Customers -->
+    <div class="row">
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

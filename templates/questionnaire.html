@@ -1,0 +1,182 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Recommendation System</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand">Recommendation System</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'home' %}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'questionnaire' %}>Questionnaire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'recommend' %}>Recommendation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'search' %}>Search</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Questionnaire
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active">Questionnaire: Questionnaire on movies and emotions</li>
+    </ol>
+
+    <hr>
+    <h3>Hint:choose your favorite movie in this emotion!!!</h3>
+    <hr>
+    <!-- <p>Choose the movies you prefer when you're  -->
+       <!-- <b>{{Emotion}}</b> -->
+    <!-- Content Row -->
+    <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h3 class="card-header">neutral</h3>
+                <select name = "movie_select0">
+                  {% for moive in moive_list %}
+                  <option>{{moive}}<option>
+                  {% endfor %}
+                </select>
+              <!-- </form> -->
+              <!-- <a href="#" class="btn btn-primary" href={% url 'questionnaire' %}>Prefer</a> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h3 class="card-header">disgust</h3>
+          	<!-- <img class="img-fluid rounded" src="http://placehold.it/270x400" alt=""> -->
+              <!-- <form method="POST"> -->
+                <select name = "movie_select1">
+                  {% for moive in moive_list %}
+                  <option>{{moive}}<option>
+                  {% endfor %}
+                </select>
+              <!-- </form> -->
+              <!-- <a href="#" class="btn btn-primary" href={% url 'questionnaire' %}>Prefer</a> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h3 class="card-header">angry</h3>
+          	<!-- <img class="img-fluid rounded" src="http://placehold.it/270x400" alt=""> -->
+              <!-- <form method="POST"> -->
+                <select name = "movie_select2">
+                  {% for moive in moive_list %}
+                  <option>{{moive}}<option>
+                  {% endfor %}
+                </select>
+              <!-- </form> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h3 class="card-header">surprise</h3>
+          	<!-- <form method="POST"> -->
+                <select name = "movie_select3">
+                  {% for moive in moive_list %}
+                  <option>{{moive}}<option>
+                  {% endfor %}
+                </select>
+              <!-- </form> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h3 class="card-header">sad</h3>
+          	<!-- <form method="POST"> -->
+                <select name = "movie_select4">
+                  {% for moive in moive_list %}
+                  <option>{{moive}}<option>
+                  {% endfor %}
+                </select>
+              <!-- </form> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h3 class="card-header">happy</h3>
+          	<!-- <form method="POST"> -->
+                <select name = "movie_select5">
+                  {% for moive in moive_list %}
+                  <option>{{moive}}<option>
+                  {% endfor %}
+                </select>
+            </li>
+          </ul>
+        </div>
+      </div> 
+      <!-- <a href="{% url 'questionnaire' %}" class="btn btn-primary container justify-content-center mb-4">Prefer</a>  -->
+      <!-- <input type="submit" href="{% url 'questionnaire' %}" class="btn btn-primary container justify-content-center mb-4" value="prefer">           -->
+      <input type="submit" class="btn btn-primary container justify-content-center mb-4" value="prefer">          
+
+      </form>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

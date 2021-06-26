@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Film Now</title>
+</head>
+<body>
+    <h2>Search one of your interested film:</h2>
+    <form method="POST">
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Search">
+        {% if message %}
+        <div style="color:red" >{{ message }}</div>
+        {% endif %}
+        {% if filmlist %}
+            {% for film in filmlist %}
+            <li> {{ film.title }} </li>
+            {% endfor %}
+        {% endif %}
+    </form>
+
+
+</body>
+</html>
